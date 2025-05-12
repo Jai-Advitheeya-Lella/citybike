@@ -1,0 +1,33 @@
+name: 🛠️ Feature Engineering
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 3 * * *'
+
+jobs:
+  run-feature-engineering:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: ⬇️ Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: 🔧 Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: 📦 Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: 🔑 Set up Hopsworks API Key
+        run: echo "$HOPSWORKS_API_KEY" > hopsworks_api_key.txt
+        env:
+          HOPSWORKS_API_KEY: ${{ secrets.HOPSWORKS_API_KEY }}
+
+      - name: 🚲 Run Feature Engineering Script
+        run: |
+          python scripts/data_engineering.py
