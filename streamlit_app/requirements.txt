@@ -1,0 +1,9 @@
+pandas
+numpy
+hopsworks
+mlflow
+joblib
+lightgbm
+scikit-learn
+streamlit
+altair
