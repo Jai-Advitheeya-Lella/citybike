@@ -1,0 +1,34 @@
+# Create .gitignore file with the following content
+cat > .gitignore << 'EOL'
+# Ignore all data and model artifacts
+
+
+/model_artifacts/*
+/mlruns/
+__pycache__/
+*.pyc
+*.pkl
+.DS_Store
+
+# Jupyter and VSCode related
+.ipynb_checkpoints/
+.vscode/
+
+# OS / Env files
+.env
+*.env
+*.log
+*.swp
+*.bak
+*.tmp
+*.sqlite
+
+# Conda
+*.yml
+*.lock
+*.db
+*.egg-info/
+
+# Ignore Streamlit Cloud-specific caches
+.streamlit/
+EOL
