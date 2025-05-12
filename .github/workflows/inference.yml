@@ -19,6 +19,7 @@ jobs:
       - name: Install dependencies
         run: |
           pip install -r streamlit_app/requirements.txt
+          pip install "hopsworks[python]"  # ✅ This installs confluent-kafka
 
       - name: Run Inference
         run: |
