@@ -7,7 +7,7 @@ cat > .gitignore << 'EOL'
 /mlruns/
 __pycache__/
 *.pyc
-*.pkl
+
 .DS_Store
 
 # Jupyter and VSCode related
