@@ -3,7 +3,7 @@ cat > .gitignore << 'EOL'
 # Ignore all data and model artifacts
 
 
-/model_artifacts/*
+
 /mlruns/
 __pycache__/
 *.pyc
